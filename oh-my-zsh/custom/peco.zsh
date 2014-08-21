@@ -1,3 +1,5 @@
+# peco-select-history 
+# (http://shibayu36.hatenablog.com/entry/2014/06/27/223538)
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -14,6 +16,8 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+# peco-select-host
+# 
 function peco-select-host () {
     host=$(grep -E '^host\s+(\w|\d)+' ~/.ssh/config | awk '{print $2}' | peco)
 
