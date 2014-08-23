@@ -19,7 +19,7 @@ bindkey '^r' peco-select-history
 # peco-select-host
 # 
 function peco-select-host () {
-    host=$(grep -E '^host\s+(\w|\d)+' ~/.ssh/config | awk '{print $2}' | peco)
+    host=$(grep -iE '^host\s+(\w|\d)+' ~/.ssh/config | awk '{print $2}' | peco)
 
     if [ -n "$host" ]; then
         ssh $host
