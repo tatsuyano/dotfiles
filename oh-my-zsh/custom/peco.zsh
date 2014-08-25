@@ -20,9 +20,21 @@ bindkey '^r' peco-select-history
 # 
 function peco-select-host () {
     host=$(grep -iE '^host\s+(\w|\d)+' ~/.ssh/config | awk '{print $2}' | peco)
-
     if [ -n "$host" ]; then
         ssh $host
     fi
 }
 alias hs=peco-select-host
+
+# peco-src
+# (http://blog.kentarok.org/entry/2014/06/03/135300)
+function peco-src () {
+    local selected_dir=$(ghq list --full-path | peco --query "$LBUFFER")
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-src
+bindkey '^S' peco-src
