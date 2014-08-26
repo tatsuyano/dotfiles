@@ -1,0 +1,24 @@
+(source gnu)
+(source marmalade)
+(source melpa)
+
+(depends-on "markdown-mode")
+
+;; highlight
+(depends-on "vline")
+(depends-on "col-highlight")
+
+;; auto-complete
+(depends-on "auto-complete")
+(depends-on "fuzzy")
+(depends-on "popup")
+
+;; Ruby
+(depends-on "ruby-block")
+(depends-on "ruby-compilation")
+(depends-on "ruby-end")
+(depends-on "ruby-interpolation")
+(depends-on "ruby-mode")
+(depends-on "ruby-test-mode")
+(depends-on "ruby-tools")
+(depends-on "inf-ruby")
