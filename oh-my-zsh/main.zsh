@@ -11,7 +11,3 @@ export PATH=$GOROOT/bin:$PATH
 
 ## cask
 export PATH=$HOME/.cask/bin:$PATH
-
-## z
-_Z_CMD=j
-precmd() { _z --add "$(pwd -P)" }
