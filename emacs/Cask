@@ -22,3 +22,6 @@
 (depends-on "ruby-test-mode")
 (depends-on "ruby-tools")
 (depends-on "inf-ruby")
+
+;; migemo
+(depends-on "migemo")
