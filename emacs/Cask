@@ -23,5 +23,8 @@
 (depends-on "ruby-tools")
 (depends-on "inf-ruby")
 
-;; migemo
+;; Migemo
 (depends-on "migemo")
+
+;; Helm
+(depends-on "helm")

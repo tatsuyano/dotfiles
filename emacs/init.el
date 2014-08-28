@@ -34,7 +34,7 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
-;; migemo
+;; Migemo
 (require 'migemo)
 (setq migemo-command "/usr/local/bin/cmigemo")
 (setq migemo-options '("-q" "--emacs"))
@@ -44,3 +44,9 @@
 (setq migemo-regex-dictionary nil)
 (load-library "migemo")
 (migemo-init)
+
+;; Helm
+(require 'helm-config)
+(global-set-key (kbd "C-c h") 'helm-mini)
+(helm-mode 1)
+(define-key helm-read-file-map (kbd "C-h") 'delete-backward-char) ;;ミニバッファでC-hをバックスペースに割り当て
