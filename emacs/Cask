@@ -28,3 +28,6 @@
 
 ;; Helm
 (depends-on "helm")
+
+;; Setup
+(depends-on "init-loader")
