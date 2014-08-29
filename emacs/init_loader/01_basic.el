@@ -29,3 +29,6 @@
 
 (global-set-key "\C-c\C-l" 'toggle-truncate-lines)
 (custom-set-variables '(tool-bar-mode nil)) (custom-set-faces )
+
+;; hostsやconfファイルに色がつくようになる
+(require 'generic-x)
