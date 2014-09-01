@@ -5,6 +5,11 @@
 ;; Setup
 (depends-on "init-loader")
 
+;; Auto-complete
+(depends-on "auto-complete")
+(depends-on "fuzzy")
+(depends-on "popup")
+
 ;; Migemo
 (depends-on "migemo")
 
@@ -18,3 +23,4 @@
 (depends-on "ruby-mode")
 (depends-on "ruby-end")
 (depends-on "ruby-block")
+(depends-on "robe")
