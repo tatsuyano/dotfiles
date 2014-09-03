@@ -17,7 +17,7 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 # peco-select-host
-# 
+#
 function peco-select-host () {
     host=$(grep -iE '^host\s+(\w|\d)+' ~/.ssh/config | awk '{print $2}' | peco)
     if [ -n "$host" ]; then
@@ -38,3 +38,13 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^S' peco-src
+
+# peco-snippets
+# (http://blog.glidenote.com/blog/2014/06/26/snippets-peco-percol/)
+function peco-snippets() {
+    BUFFER=$(grep -v "^#" ~/.snippets | peco --query "$LBUFFER")
+    zle clear-screen
+}
+
+zle -N peco-snippets
+bindkey '^x^s' peco-snippets
