@@ -24,3 +24,9 @@
 (depends-on "ruby-end")
 (depends-on "ruby-block")
 (depends-on "robe")
+
+;; PHP
+(depends-on "php-mode")
+
+;; HTML
+(depends-on "web-mode")
