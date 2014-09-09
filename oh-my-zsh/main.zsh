@@ -1,13 +1,19 @@
 alias ll='ls -l --color=auto'
 alias ls='ls -F --color=auto'
 
-## anyenv
-export PATH=$HOME/.anyenv/bin:$PATH
-eval "$(anyenv init - zsh)"
+export PATH=/usr/sbin:/sbin:$PATH
 
 ## golang
 export GOPATH=$HOME
-export PATH=$GOROOT/bin:$PATH
+export PATH=$PATH:$GOPATH/bin
+
+## anyenv
+if [ -d $HOME/.anyenv ]; then
+  export PATH=$HOME/.anyenv/bin:$PATH
+  eval "$(anyenv init - zsh)"
+fi
 
 ## cask
-export PATH=$HOME/.cask/bin:$PATH
+if [ -d $HOME/.cask ]; then
+  export PATH=$HOME/.cask/bin:$PATH
+fi
