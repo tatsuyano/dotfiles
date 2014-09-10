@@ -4,4 +4,5 @@
 ;; --------------------------------------------------
 (require 'web-mode)
 
-(add-to-list 'auto-mode-alist '("\\.smarty\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.smarty\\'" . web-mode));; Smarty
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))   ;; Handlebars.js
