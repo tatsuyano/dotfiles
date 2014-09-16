@@ -1,0 +1,28 @@
+# tar
+tar cvzf hoge.tar.gz hoge # 圧縮
+tar xvzf hoge.tar.gz      # 解凍
+
+# sample
+for x in `seq 1 10`; do; echo $x; done
+
+# tmux
+C-z & # tmux ウィンドウ強制終了
+
+# domain
+dig 10rane.com any            # レコード
+dig blog.10rane.com any       # レコード
+nslookup -type=any 10rane.com # dns
+whois 10rane.com              # レジストラ、whois情報
+
+# port
+netstat -an |grep LISTEN      # ListenされているPort
+lsof -i:2368                  # portを指定
+lsof -c node                  # プロセス名を指定
+
+# ps
+#ps aux | nl -ba | peco | perl -wlne 'm{^\s+\d+\s(.*+)} and print $1' # 行番号表示
+ps aux | nl -ba | peco        # 行番号表示
+
+# tail
+sudo tail -f /var/log/nginx/access.log
+sudo tail -f /var/log/nginx/error.log
