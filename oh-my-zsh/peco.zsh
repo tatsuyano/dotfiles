@@ -38,20 +38,25 @@ function peco-src () {
 zle -N peco-src
 bindkey '^S' peco-src
 
-## peco-snippets
-## (http://blog.glidenote.com/blog/2014/06/26/snippets-peco-percol/)
-#function peco-snippets() {
-#    BUFFER=$(grep -v "^#" ~/.snippets | peco --query "$LBUFFER")
-#    zle clear-screen
-#}
-#zle -N peco-snippets
-#bindkey '^x^s' peco-snippets
-
 # peco-snippets2
+# (http://blog.glidenote.com/blog/2014/06/26/snippets-peco-percol/)
 function peco-snippets2() {
-    DESCRIPTION=$(grep -v "^#" ~/.snippets | peco --prompt='Description>')
-    BUFFER=$(echo $DESCRIPTION | awk -F "#" '{print $1}' | peco --query "$LBUFFER")
+    DESCRIPTION=$(grep -v "^#" ~/.snippets | peco --query "$LBUFFER")
+    BUFFER=$(echo $DESCRIPTION | awk -F "#" '{print $1}')
+    CURSOR=$#BUFFER
     zle clear-screen
 }
 zle -N peco-snippets2
 bindkey '^x^s' peco-snippets2
+
+# peco-alias
+# (http://qiita.com/astrsk_hori/items/d01f83450b4181c2681b)
+function peco-alias(){
+  TARGET_ALIAS=$(alias | peco --query "$LBUFFER")
+  BUFFER=$(echo "$TARGET_ALIAS"|awk -F '=' '{print $1}')
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+zle -N peco-alias
+#bindkey '^@^a' peco-alias
+bindkey '^x^a' peco-alias
