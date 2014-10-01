@@ -60,3 +60,14 @@ function peco-alias(){
 zle -N peco-alias
 #bindkey '^@^a' peco-alias
 bindkey '^x^a' peco-alias
+
+# peco_ggi_list
+# (http://handlename.hatenablog.jp/entry/2014/08/19/211643)
+function _peco_ggi_list () {
+    lang=$(get-git-ignore | peco)
+
+    if [ -n "$lang" ]; then
+        get-git-ignore --lang=$lang
+    fi
+}
+alias ggi=_peco_ggi_list
