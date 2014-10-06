@@ -17,3 +17,8 @@ fi
 if [ -d $HOME/.cask ]; then
   export PATH=$HOME/.cask/bin:$PATH
 fi
+
+## heroku
+if [ -d /usr/local/heroku ]; then
+  export PATH=/usr/local/heroku/bin:$PATH
+fi
