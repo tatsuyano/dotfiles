@@ -13,7 +13,7 @@ if [ -d $HOME/.anyenv ]; then
   eval "$(anyenv init - zsh)"
 fi
 
-## cask
+## Emacs-cask
 if [ -d $HOME/.cask ]; then
   export PATH=$HOME/.cask/bin:$PATH
 fi
@@ -21,4 +21,9 @@ fi
 ## heroku
 if [ -d /usr/local/heroku ]; then
   export PATH=/usr/local/heroku/bin:$PATH
+fi
+
+## MacOSX only
+if [[ "$(uname)" == "Darwin" ]]; then
+   export HOMEBREW_CASK_OPTS="--appdir=/Applications" # Homebrew-cask
 fi
