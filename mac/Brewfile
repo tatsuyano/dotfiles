@@ -1,0 +1,48 @@
+## ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+## export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+## sudo -E bash
+## brew bundle
+
+## Homebrew
+update
+upgrade
+
+brew tap phinze/homebrew-cask
+install brew-cask
+install zsh git tig tree wget rsync emacs curl tmux openssl ricty nkf
+
+## Homebrew-cask
+cask install google-chrome
+cask install google-japanese-ime
+cask install dropbox
+cask install evernote
+cask install skitch
+cask install onepassword
+cask install appcleaner
+cask install the-unarchiver
+cask install sophos-anti-virus-home-edition
+cask install vlc
+
+## Developer
+cask install iterm2
+cask install virtualbox
+cask install vagrant
+cask install heroku-toolbelt
+cask install kobito
+cask install licecap
+cask install dash
+cask install slack
+cask install hoster
+cask install github
+cask install forklift
+
+## AppStore
+# line
+# twitter
+
+## download
+# alfred2
+# garmin-web-updater
+# mame-osx
+# pixelmator
