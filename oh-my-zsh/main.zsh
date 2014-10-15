@@ -9,18 +9,18 @@ export PATH=$PATH:$GOPATH/bin
 
 ## anyenv
 if [ -d $HOME/.anyenv ]; then
-  export PATH=$HOME/.anyenv/bin:$PATH
-  eval "$(anyenv init - zsh)"
+   export PATH=$HOME/.anyenv/bin:$PATH
+   eval "$(anyenv init - zsh)"
 fi
 
 ## Emacs-cask
 if [ -d $HOME/.cask ]; then
-  export PATH=$HOME/.cask/bin:$PATH
+   export PATH=$HOME/.cask/bin:$PATH
 fi
 
 ## heroku
 if [ -d /usr/local/heroku ]; then
-  export PATH=/usr/local/heroku/bin:$PATH
+   export PATH=/usr/local/heroku/bin:$PATH
 fi
 
 ## MacOSX only

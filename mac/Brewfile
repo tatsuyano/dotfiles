@@ -10,7 +10,7 @@ upgrade
 
 brew tap phinze/homebrew-cask
 install brew-cask
-install zsh git tig tree wget rsync emacs curl tmux openssl ricty nkf
+install bash zsh git tig tree wget rsync emacs curl tmux openssl ricty nkf
 
 ## Homebrew-cask
 cask install google-chrome
