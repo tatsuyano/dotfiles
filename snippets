@@ -1,5 +1,6 @@
 host yahoo.co.jp | awk '{print $4}' | head -n 1 | xargs traceroute -n# ドメインからネットワークの経路を調べる
 route# ルーティングを見る
+
 # tr
 echo $PATH | tr ':' '\n'# 置換
 echo hoge  | tr a-z A-Z#  大文字、小文字置換
@@ -16,6 +17,7 @@ tar xvzf hoge.tar.gz#      解凍
 
 # tmux
 C-z &# tmux ウィンドウ強制終了
+C-z {# tmux ペインを入れ替え
 
 # domain
 whois 10rane.com#               レジストラ、whois情報
@@ -34,3 +36,11 @@ ps auxww | nl -ba | peco#       行番号表示
 # tail
 sudo tail -f /var/log/nginx/access.log# nginx
 sudo tail -f /var/log/nginx/error.log#  nginx
+
+# 置換
+find ./ -name '*.md' -print | xargs sed -i "s/mgauth/mgpf/g"#     一括置換
+find ./ -name '*.md' -print | xargs sed -i.bak "s/mgauth/mgpf/g"# 一括置換(元ファイルを残す)
+
+# heroku
+heroku apps:info#  applicationの情報
+heroku logs -t#    tail -fと同じ
