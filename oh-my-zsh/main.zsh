@@ -1,6 +1,13 @@
 alias ll='ls -l --color=auto'
 alias ls='ls -F --color=auto'
 
+## colordiff
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+
 export PATH=/usr/sbin:/sbin:$PATH
 
 ## golang
