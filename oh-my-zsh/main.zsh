@@ -2,6 +2,7 @@ alias ll='ls -l --color=auto'
 alias ls='ls -F --color=auto'
 
 ## colordiff
+## http://senta.me/blog/others/install-colordiff-cento/
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff -u'
 else
