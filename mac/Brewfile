@@ -13,30 +13,31 @@ install brew-cask
 install bash zsh git tig tree wget rsync emacs curl tmux openssl ricty nkf
 
 ## Homebrew-cask
-cask install google-chrome
-cask install google-japanese-ime
-cask install google-drive
-cask install dropbox
-cask install evernote
-cask install skitch
-cask install onepassword
-cask install appcleaner
-cask install the-unarchiver
-cask install sophos-anti-virus-home-edition
-cask install vlc
+brew cask install google-chrome
+brew cask install google-japanese-ime
+brew cask install google-drive
+brew cask install dropbox
+brew cask install evernote
+brew cask install skitch
+brew cask install onepassword
+brew cask install appcleaner
+brew cask install the-unarchiver
+brew cask install sophos-anti-virus-home-edition
+brew cask install vlc
+brew cask install xquartz
 
 ## Developer
-cask install iterm2
-cask install virtualbox
-cask install vagrant
-cask install heroku-toolbelt
-cask install kobito
-cask install licecap
-cask install dash
-cask install slack
-cask install hoster
-cask install github
-cask install forklift
+brew cask install iterm2
+brew cask install virtualbox
+brew cask install vagrant
+brew cask install heroku-toolbelt
+brew cask install kobito
+brew cask install licecap
+brew cask install dash
+brew cask install slack
+brew cask install hoster
+brew cask install github
+brew cask install forklift
 
 ## AppStore
 # line
