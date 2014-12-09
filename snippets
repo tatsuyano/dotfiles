@@ -44,3 +44,6 @@ find ./ -name '*.md' -print | xargs sed -i.bak "s/mgauth/mgpf/g"# 一括置換(�
 # heroku
 heroku apps:info#  applicationの情報
 heroku logs -t#    tail -fと同じ
+
+# mail(sudo yum -y install mailx)
+echo "BODY" | mail -s 'SUBJECT' tatsuyano@gmail.com# メールのテスト送信
