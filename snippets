@@ -47,3 +47,12 @@ heroku logs -t#    tail -fと同じ
 
 # mail(sudo yum -y install mailx)
 echo "BODY" | mail -s 'SUBJECT' tatsuyano@gmail.com# メールのテスト送信
+
+# file
+sudo tac /var/log/secure | more# ファイルを後ろから参照する
+
+# 負荷 http://qiita.com/kidachi_/items/07637a5baa0da7d52e6a
+sar -q#  loadaverage
+sar -u#  CPU使用率
+sar -b#  I/O
+sar -r#  メモリとスワップ使用率
