@@ -1,14 +1,4 @@
-alias ll='ls -l --color=auto'
-alias ls='ls -F --color=auto'
-
-## colordiff
-## http://senta.me/blog/others/install-colordiff-cento/
-if [[ -x `which colordiff` ]]; then
-  alias diff='colordiff -u'
-else
-  alias diff='diff -u'
-fi
-
+export EDITOR=emacs
 export PATH=/usr/sbin:/sbin:$PATH
 
 ## golang
@@ -35,3 +25,17 @@ fi
 if [[ "$(uname)" == "Darwin" ]]; then
    export HOMEBREW_CASK_OPTS="--appdir=/Applications" # Homebrew-cask
 fi
+
+## colordiff http://senta.me/blog/others/install-colordiff-cento
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+
+## alias & function
+alias mysql="mysql --pager='less -S -n -i -F -X'"
+alias ll='ls -l --color=auto'
+alias ls='ls -F --color=auto'
+
+function tmr(){ tmux new -s $1 || tmux attach -d -t $1; }
