@@ -41,3 +41,10 @@ alias ll='ls -l --color=auto'
 alias ls='ls -F --color=auto'
 
 function tmr(){ tmux new -s $1 || tmux attach -d -t $1; }
+
+function gsb(){
+  CURRENT_DIR=$(cd $(dirname $0);pwd);
+  FILE=$CURRENT_DIR/$1;
+  LINE=$2;
+  git show $(git blame $FILE -L $LINE,$LINE | awk '{print $1}')
+}
