@@ -59,3 +59,6 @@ sar -r#  メモリとスワップ使用率
 
 # git
 git blame ファイル名# 行ごとにコミッターの名前を表示
+
+# etc
+seq 1 20 | awk '{print $0%15?$0%5?$0%3?$0:"Fizz":"Buzz":"FizzBuzz"}'# FizzBuzz
