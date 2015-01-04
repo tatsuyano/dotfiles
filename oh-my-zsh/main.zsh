@@ -37,14 +37,9 @@ fi
 
 ## alias & function
 alias mysql="mysql --pager='less -S -n -i -F -X'"
-alias ll='ls -l --color=auto'
-alias ls='ls -F --color=auto'
+if [[ "$(uname)" != "Darwin" ]]; then
+   alias ll='ls -l --color=auto'
+   alias ls='ls -F --color=auto'
+fi
 
 function tmr(){ tmux new -s $1 || tmux attach -d -t $1; }
-
-function gsb(){
-  CURRENT_DIR=$(cd $(dirname $0);pwd);
-  FILE=$CURRENT_DIR/$1;
-  LINE=$2;
-  git show $(git blame $FILE -L $LINE,$LINE | awk '{print $1}')
-}
