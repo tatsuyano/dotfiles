@@ -36,7 +36,12 @@ else
 fi
 
 ## alias & function
-alias mysql="mysql --pager='less -S -n -i -F -X'"
+if [[ -x `which rlwrap` ]]; then
+   alias mysql="rlwrap -a -p$TMUX_MAIN_COLOR mysql --pager='less -S -n -i -F -X'"
+else
+   alias mysql="mysql --pager='less -S -n -i -F -X'"
+fi
+
 if [[ "$(uname)" != "Darwin" ]]; then
    alias ll='ls -l --color=auto'
    alias ls='ls -F --color=auto'
