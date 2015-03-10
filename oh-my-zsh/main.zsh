@@ -37,6 +37,7 @@ fi
 
 ## alias & function
 alias mysql="mysql --pager='less -S -n -i -F -X'"
+
 if [[ "$(uname)" != "Darwin" ]]; then
    alias ll='ls -l --color=auto'
    alias ls='ls -F --color=auto'
