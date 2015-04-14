@@ -71,3 +71,17 @@ function _peco_ggi_list () {
     fi
 }
 alias ggi=_peco_ggi_list
+
+# peco_bundle_show
+# http://masutaka.net/chalow/2015-04-13-1.html
+function peco_bundle_show() {
+    local selected_dir=$(bundle show | awk 'NR>1 {print $2}' | peco | xargs bundle show)
+
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco_bundle_show
+bindkey '^x^y' peco_bundle_show
