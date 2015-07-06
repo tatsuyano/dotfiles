@@ -1,17 +1,16 @@
+# ネットワーク
 host yahoo.co.jp | awk '{print $4}' | head -n 1 | xargs traceroute -n# ドメインからネットワークの経路を調べる
 route# ルーティングを見る
 
-# tr
-echo $PATH | tr ':' '\n'# 置換
-echo hoge  | tr a-z A-Z#  大文字、小文字置換
-
-# perl
-echo $PATH | perl -pe "s/:/\n/g"# 置換
+# 置換
+echo $PATH | tr ':' '\n'#         置換(trコマンド)
+echo hoge  | tr a-z A-Z#          大文字、小文字置換(trコマンド)
+echo $PATH | perl -pe "s/:/\n/g"# 置換(perl)
 
 # for
 for x in `seq 1 10`; do; echo $x; done
 
-# tar
+# 圧縮、回答
 tar cvzf hoge.tar.gz hoge# 圧縮
 tar xvzf hoge.tar.gz#      解凍
 
@@ -31,7 +30,7 @@ lsof -i:2368#                   portを指定
 lsof -c node#                   プロセス名を指定
 
 # ps
-ps auxww | nl -ba | peco#       行番号表示
+ps auxww | nl -ba | peco#       行番号表示(ps)
 
 # tail
 sudo tail -f /var/log/nginx/access.log# nginx
@@ -61,4 +60,9 @@ sar -r#  メモリとスワップ使用率
 git blame ファイル名# 行ごとにコミッターの名前を表示
 
 # etc
-seq 1 20 | awk '{print $0%15?$0%5?$0%3?$0:"Fizz":"Buzz":"FizzBuzz"}'# FizzBuzz
+seq 1 20 | awk '{print $0%15?$0%5?$0%3?$0:"Fizz":"Buzz":"FizzBuzz"}'# FizzBu
+
+# [ifconfig.io](http://qiita.com/kuwa_tw/items/2cfba99958275e2a54ae)
+curl ifconfig.io#               サーバー(自身)のグローバルIPの確認
+curl ifconfig.io/host#          サーバー(自身)のhost名確認
+curl ifconfig.io/all.json | jq# サーバー(自身)の情報をjson形式(jq)で確認
